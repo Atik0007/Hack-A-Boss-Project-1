@@ -61,9 +61,6 @@ h1 img {
 div ul li img{
   width:300px;
   height:200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 p{
   font-size: .7rem;
@@ -152,10 +149,31 @@ ul li.show div {
     align-items: center;
   }
   img{
-    width:200px;
+    width:200px !important; 
   }
   ul li:nth-child(even) div {
     left: -251px;
-    /*250+45-6*/
   }
+
+  ul li {
+    position: relative;
+    list-style-type: none;
+    width: 0px;
+    background-color: var(--line-color);
+    margin: 0 auto;
+    padding-top: 50px;
+}
+ul li::after {
+  display: none;
+}
+ul li:nth-child(even) div {
+  left: -114px;
+}
+ul li:nth-child(odd) div {
+  left: -114px;
+  right: 0px;
+}
+#searchBar {
+  width: 80%;
+}
 }
