@@ -6,17 +6,59 @@
   box-sizing: border-box;
 }
 
+html{
+  --primery-color: #03011f;
+  --secondary-color: #2a327147;
+  --type-color: rgb(109, 172, 197);
+  --line-color:#FFFFFF;
+}
+
 body {
-  background-color: #03011f;
-  font-family: "Source Sans Pro";
-  color: #6cacc5;
+  background-color: var(--primery-color);
+  color: var(--type-color);
+  font-family: 'MedievalSharp', cursive;
 }
 
 h1 {
-  text-align:center;
-  font-size: 1rem;
+  text-align:center; 
 }
-img{
+h1 img {
+  width: 600px;
+  margin: 0 auto;
+}
+
+
+#searchBar {
+  width: 20%;
+  height: 32px;
+  border-radius: 0.7rem;
+  border: 1px solid var(--line-color);
+  padding: 5px 10px;
+  font-size: 12px;
+  font-family: "Source Sans Pro";
+  color: var(--line-color);
+  background-color: var(--primery-color);
+  margin: 1rem auto;
+}
+#searchBar::placeholder {
+  color: var(--type-color);
+  text-transform: uppercase;
+}
+#searchBar:focus {
+  outline: none;
+}
+#searchBar:hover,
+#searchBar:focus {
+  border-color: var(--type-color);
+  color: var(--type-color);
+}
+
+#searchWrapper {
+  position: relative;
+  text-align: center;
+}
+
+div ul li img{
   width:300px;
   height:200px;
   display: flex;
@@ -35,13 +77,13 @@ ul li {
   position:relative;
   list-style-type: none;
   width: 6px;
-  background-color: white;
+  background-color: var(--line-color);
   margin: 0 auto;
   padding-top: 50px;
 }
 
 ul li::after {
-  background: white;
+  background: var(--line-color);
   content: '';
   width: 25px;
   height: 25px;
@@ -59,15 +101,18 @@ ul li div{
   padding: 15px;
   border-radius: 5px;
   /* bottom: 0; */
-  background: rgba(42,50,113, .28);
+  background: var(--secondary-color);
 }
 
 ul li:nth-child(odd) div {
-  left: 45px;
+  left: 37px;
 }
 
 ul li:nth-child(even) div {
-  left: -445px;
+  left: -361px;
+}
+ul li:nth-child(even) div time{
+  text-align: right;
 }
 
 time {
@@ -96,6 +141,10 @@ ul li.show div {
   visibility: visible;
   opacity: 1;
 }
+.timeline-item:hover{
+  box-shadow: 0 0 10px rgba(109, 172, 197);
+
+}
 
 @media screen and (max-width: 900px) {
   ul li div {
@@ -106,7 +155,7 @@ ul li.show div {
     width:200px;
   }
   ul li:nth-child(even) div {
-    left: -289px;
+    left: -251px;
     /*250+45-6*/
   }
 }
